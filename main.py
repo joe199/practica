@@ -22,6 +22,8 @@ class FlowControl(object):
             service = self.flow * (delta / 1000.0)
             self.service  += service
             self.total    += service
+            print 'servei: ', self.service
+            print 'total: ', self.total
         else:
             # Guardar a usuari self.service
             self.service = 0
