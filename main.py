@@ -1,5 +1,7 @@
 import time
 import RPi.GPIO as GPIO
+import signal
+from readnfc import read_nfc
 
 class FlowControl(object):
     """Controlling FlowControl"""
@@ -8,6 +10,8 @@ class FlowControl(object):
         self.previousTime = 0
         self.service = 0
         self.total = 0
+        self.nfc = read_nfc()
+
 
     def update(self, channel):
         tim = time.time()
@@ -24,6 +28,11 @@ class FlowControl(object):
             self.user = self._get_user()
 
         self.previousTime = tim
+
+    def _get_user(self):
+        uid = self.nfc.read()
+        return uid
+
 
 
 if __name__ == "__main__":
