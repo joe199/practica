@@ -9,7 +9,7 @@ import MFRC522
 
 class read_nfc(object):
 
-  MIFAREReader = MFRC522.MFRC522()
+    MIFAREReader = MFRC522.MFRC522()
 
     def read(self):
 
