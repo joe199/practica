@@ -31,6 +31,7 @@ class FlowControl(object):
 
     def _get_user(self):
         uid = self.nfc.read()
+        print 'uid recived'
         return uid
 
 
