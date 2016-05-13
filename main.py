@@ -22,14 +22,16 @@ class FlowControl(object):
             service = self.flow * (delta / 1000.0)
             self.service  += service
             self.total    += service
-            print 'servei: ', self.service
-            print 'total: ', self.total
+            #print 'servei: ', self.service
+            #print 'total: ', self.total
         else:
             # Guardar a usuari self.service
             self.service = 0
             self.user = self._get_user()
 
         self.previousTime = tim
+        print 'servei: ', self.service
+        print 'total: ', self.total
 
     def _get_user(self):
         uid = self.nfc.read()
