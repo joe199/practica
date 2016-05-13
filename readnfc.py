@@ -14,8 +14,9 @@ class read_nfc(object):
     def read(self):
 
         # Scan for cards
+        print 'Bucle read'
         (status,TagType) = MIFAREReader.MFRC522_Request(MIFAREReader.PICC_REQIDL)
-
+        print 'Hola'
         # If a card is found
         if status == MIFAREReader.MI_OK:
             print "Card detected"
