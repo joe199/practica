@@ -36,11 +36,11 @@ class FlowControl(object):
 
 
 if __name__ == "__main__":
-    
+
     fl = FlowControl()
-	GPIO.setmode(GPIO.BCM) # use real GPIO numbering
-	GPIO.setup(23,GPIO.IN, pull_up_down=GPIO.PUD_UP)
-	GPIO.add_event_detect(23, GPIO.RISING, callback=fl.update, bouncetime=20)
+    GPIO.setmode(GPIO.BCM) # use real GPIO numbering
+    GPIO.setup(23,GPIO.IN, pull_up_down=GPIO.PUD_UP)
+    GPIO.add_event_detect(23, GPIO.RISING, callback=fl.update, bouncetime=20)
 
     try:
         while True:
