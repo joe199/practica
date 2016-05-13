@@ -9,6 +9,7 @@ import MFRC522
 
 class read_nfc(object):
 
+    signal.signal(signal.SIGINT, end_read)
     MIFAREReader = MFRC522.MFRC522()
 
     def read(self):
